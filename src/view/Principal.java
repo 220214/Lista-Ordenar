@@ -20,22 +20,24 @@ public class Principal {
 						
 		try {
 				System.out.print("  "+ l.get(0));
-				System.out.println("  ");
+				
 			} catch (Exception e) {
 				
 				e.printStackTrace();
 			}
 	}
-		int tm = l.size();
-		
-		for (int i=0; i<tm-1;i++) {
+		System.out.println("  ");	
+	for (int i=0; i<l.size();i++) {
 	
-		for(int j=0;j<(tm-i-1);j++) {
+		for(int j=(i+1);j<(l.size());j++) {
+		
 				try {
-					if(l.get(j)>l.get(j+1)) {
-						l.add(l.get(j+1), j);
-						l.remova(j+1);
-						l.add(l.get(j), j+1);
+					
+					if(l.get(i)>l.get(j)) {
+						int aux =l.get(i);
+						l.add(l.get(j), i+1);
+						l.remova(i);
+						l.add(aux,j+1);
 						l.remova(j);
 					}
 				} catch (Exception e) {
@@ -44,11 +46,10 @@ public class Principal {
 			}
 		}
 	
-		for(int i=0; i<l.size();i++) {
+		for(int i=0; i<10;i++) {
 		try {
-			System.out.println(l.get(i)+ " ");
+			System.out.print(l.get(i)+ " ");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

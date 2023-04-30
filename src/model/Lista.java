@@ -28,15 +28,18 @@ public class Lista {
 		if(isEmpty()) {
 			throw new Exception("Lista vazia");
 		}
-		if(pos<0||pos<-1) {
+		int tamanho = size();
+		if(pos < 0||pos>tamanho-1) {
 			throw new Exception("Posição Invalida");
 		}
 		No auxiliar = primeiro;
 		int cont =0;
 		while(cont<pos) {
 			auxiliar= auxiliar.proximo;
+			cont ++;
 		}
 		return auxiliar;
+		
 	}
 	public void addFirst(int valor) {
 		No elemento = new No();
